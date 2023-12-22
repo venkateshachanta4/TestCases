@@ -1,0 +1,216 @@
+ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Assigned To,State
+,Test Case,IT10_ZMMSPE47_Italy_consignment_custom_process,,,,manishadhulipudi74,Design
+,,,1," App or Module: 
+ MM
+Job Function/Security Role:
+ MM
+Tcode:
+ MM
+ Step Description: 
+Create the Purchase Order",PO created,,
+,,,2," App or Module: 
+ MM
+Job Function/Security Role:
+ MM
+Tcode:
+ MM
+ Step Description: 
+Create the Good Receipt",GR created,,
+,,,3," App or Module: 
+ MM
+Job Function/Security Role:
+ MM
+Tcode:
+ MM
+ Step Description: 
+Create MM consumptions",There are MM consumptions of goods,,
+,,,4," App or Module: 
+ FI
+Job Function/Security Role:
+ AP Voucher Coordinator
+Tcode:
+ ZMMSPE47
+ Step Description: 
+Vendor invoice processing","If everything is OK, the invoice is green & ready to post. Check the Payment data  (in tab) is correctly inherited from Master Data. Check the simulation posting.   Check if tax date is correctly applied and if adjusted manually it does not change, especially for invoices with Invest ID filled in. Check if payment with manually choosen bank account is applied correctly. Check if baseline date for parked document is changes once invoice date is changed manually. If the Vendor has Pmnt Terms with discount, we need to check if they were deducted correctly. Check if used Tax Code was applied correctly.",,
+,,,5," App or Module: 
+ FI
+Job Function/Security Role:
+ AP Disbursement Coordinator
+Tcode:
+ F110
+ Step Description: 
+Automatic payment program
+Start by setting the parameters for the Payment run you want to execute. Run Date & Identifier, Max Due Date & Max Posting Date criteria, Vendors, Payment Method. Then go to additional log to ensure SAP does consistency checks on Due dates & methods. In the Printout/ data Medium tab, select the form corresponding to the payment method selected. Execute the proposal.",Created payment fo this invoice,,
+,,,6," App or Module: 
+ non SAP
+Job Function/Security Role:
+ non SAP
+Tcode:
+ non SAP
+ Step Description: 
+Upload payment file to the banks
+Once the F110 was run, various files for different banks will result; these files needs to be loaded to the banks' test environments",test upload succesfull into bank website,,
+,Test Case,Leman Invoice report ZFISPE94 report,,,,manishadhulipudi74,Design
+,,,1," App or Module: 
+ FI-AP
+Job Function/Security Role:
+ AP clerk
+Tcode:
+ ZFISPE94
+ Step Description: 
+List of MM materials for Leman",correct list output,,
+,Test Case,Leman Scrap report ZFISPE93 report,,,,manishadhulipudi74,Design
+,,,1," App or Module: 
+ FI-AR
+Job Function/Security Role:
+ AR clerk
+Tcode:
+ ZFISPE93
+ Step Description: 
+Scrap report for customer Leman",correctly calculated and posted scrap,,
+,Test Case,Local Compliance ZFISPE81 report,,,,manishadhulipudi74,Design
+,,,1," App or Module: 
+ FI
+Job Function/Security Role:
+ Local compliance
+Tcode:
+ ZFISPE81
+ Step Description: 
+Czechia monthly tax report + XML file generation",Correct XML report created for tax authorities,,
+,Test Case,OpenText_HANA,,,,manishadhulipudi74,Design
+,,,1," App or Module: 
+ Finance
+Job Function/Security Role:
+ 
+Tcode:
+ FB03
+ Step Description: 
+Log on to appropriate SAP test environment",,,
+,,,2," App or Module: 
+ Finance
+Job Function/Security Role:
+ 
+Tcode:
+ FB03
+ Step Description: 
+Log on to transaction code FB03",,,
+,,,3," App or Module: 
+ Finance
+Job Function/Security Role:
+ 
+Tcode:
+ FB03
+ Step Description: 
+Enter supplied test data into the FB03 transaction",,,
+,,,4," App or Module: 
+ Finance
+Job Function/Security Role:
+ 
+Tcode:
+ FB03
+ Step Description: 
+Click Execute",,,
+,,,5," App or Module: 
+ Finance
+Job Function/Security Role:
+ 
+Tcode:
+ FB03
+ Step Description: 
+Click on dropdown in the “Services for object” -upper left corner of screen",,,
+,,,6," App or Module: 
+ Finance
+Job Function/Security Role:
+ 
+Tcode:
+ FB03
+ Step Description: 
+Select “Business Content window”",,,
+,,,7," App or Module: 
+ Finance
+Job Function/Security Role:
+ 
+Tcode:
+ FB03
+ Step Description: 
+Right click on “Business Workspace”",,,
+,,,8," App or Module: 
+ Finance
+Job Function/Security Role:
+ 
+Tcode:
+ FB03
+ Step Description: 
+Select “Create Business Workspace”",The invoice is now created on the Content Server.,,
+,,,9," App or Module: 
+ OpenText
+Job Function/Security Role:
+ 
+Tcode:
+ N/A
+ Step Description: 
+Verify document is in Content Server",,,
+,,,10," App or Module: 
+ OpenText
+Job Function/Security Role:
+ 
+Tcode:
+ N/A
+ Step Description: 
+Log onto Content Server:",,,
+,,,11," App or Module: 
+ OpenText
+Job Function/Security Role:
+ 
+Tcode:
+ N/A
+ Step Description: 
+Select P01-Production Environment",,,
+,,,12," App or Module: 
+ OpenText
+Job Function/Security Role:
+ 
+Tcode:
+ N/A
+ Step Description: 
+Select Accounts Payable",,,
+,,,13," App or Module: 
+ OpenText
+Job Function/Security Role:
+ 
+Tcode:
+ N/A
+ Step Description: 
+Select Invoices",,,
+,,,14," App or Module: 
+ OpenText
+Job Function/Security Role:
+ 
+Tcode:
+ N/A
+ Step Description: 
+Select invoice # that you used above in transaction code FB03 in SAP",,,
+,,,15," App or Module: 
+ OpenText
+Job Function/Security Role:
+ 
+Tcode:
+ N/A
+ Step Description: 
+Select small function button on invoice",,,
+,,,16," App or Module: 
+ OpenText
+Job Function/Security Role:
+ 
+Tcode:
+ N/A
+ Step Description: 
+Select “Properties” and then “Categories”",,,
+,,,17," App or Module: 
+ OpenText
+Job Function/Security Role:
+ 
+Tcode:
+ N/A
+ Step Description: 
+Verify data from SAP",Image is visible in OpenText and is the same as in SAP,,
